@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="CTC-S4-SDw">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Panda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SN8-Ns-v2y">
+                    <rect key="frame" x="132" y="160" width="217" height="84"/>
+                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                    <color key="textColor" red="1" green="0.87300947039371635" blue="0.9094589426046652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firing Up..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je6-MB-w1C">
+                    <rect key="frame" x="172" y="274" width="137" height="49"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                    <color key="textColor" red="1" green="0.87300947039999999" blue="0.90945894260000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="CTC-S4-SDw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1KW-WD-0hY"/>
+                <constraint firstItem="SN8-Ns-v2y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="160" id="3oo-0H-US0"/>
+                <constraint firstItem="Je6-MB-w1C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="172" id="407-EB-pv6"/>
+                <constraint firstItem="SN8-Ns-v2y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="132" id="95k-cD-FyY"/>
+                <constraint firstAttribute="bottom" secondItem="SN8-Ns-v2y" secondAttribute="bottom" constant="236" id="DB8-4k-ZFy"/>
+                <constraint firstItem="CTC-S4-SDw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SWH-ns-Rzo"/>
+                <constraint firstItem="Je6-MB-w1C" firstAttribute="top" secondItem="SN8-Ns-v2y" secondAttribute="bottom" constant="30" id="UbU-qA-eYz"/>
+                <constraint firstAttribute="trailing" secondItem="SN8-Ns-v2y" secondAttribute="trailing" constant="131" id="e5V-0p-urI"/>
+                <constraint firstAttribute="trailing" secondItem="CTC-S4-SDw" secondAttribute="trailing" id="gxz-dD-m0T"/>
+                <constraint firstAttribute="bottom" secondItem="Je6-MB-w1C" secondAttribute="bottom" constant="157" id="jE8-e5-bWm"/>
+                <constraint firstAttribute="bottom" secondItem="CTC-S4-SDw" secondAttribute="bottom" id="rsO-eQ-9M4"/>
+                <constraint firstAttribute="trailing" secondItem="Je6-MB-w1C" secondAttribute="trailing" constant="171" id="ytY-Ij-bh1"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Launch" width="384" height="512"/>
+    </resources>
+</document>
