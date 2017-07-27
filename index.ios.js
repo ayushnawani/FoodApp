@@ -8,7 +8,7 @@ import React, { Component } from "react";
 import { AppRegistry, StyleSheet, Text, View, Image } from "react-native";
 
 import { TabNavigator } from "react-navigation";
-import MenuPage from "./app/MenuPage";
+import MenuNavigator from "./app/MenuPage";
 import NotificationPage from "./app/NotificationPage";
 import OrderPage from "./app/OrderPage";
 
@@ -31,7 +31,7 @@ const DemoApp = TabNavigator(
   {
     Start: { screen: Start },
     Home: { screen: Home },
-    Menu: { screen: MenuPage },
+    Menu: { screen: MenuNavigator },
     Order: { screen: OrderPage },
     Notification: { screen: NotificationPage }
   },

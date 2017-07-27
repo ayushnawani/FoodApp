@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class MenuPage extends Component {
+class MenuPage extends Component {
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) =>
       <Image
@@ -146,7 +146,6 @@ export default class MenuPage extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       size: { width, height }
     };
@@ -157,12 +156,14 @@ export default class MenuPage extends Component {
     this.setState({ size: { width: layout.width, height: layout.height } });
   };
 
-  renderItem(item) {
+  renderItem = item => {
     let statusColor = item.status == "Closed Now" ? "#585657" : "#F27C21";
     return (
       <TouchableHighlight
         style={{ flex: 1 }}
-        onPress={() => alert("Pressed Me")}
+        onPress={() => {
+          this.props.navigation.navigate("DetailPage", { item: item });
+        }}
         onLongPress={() => alert("Long Pressed Me")}
       >
         <View style={styles.item}>
@@ -220,7 +221,7 @@ export default class MenuPage extends Component {
         </View>
       </TouchableHighlight>
     );
-  }
+  };
 
   setCarousel = () => {
     return [{ key: 1 }, { key: 2 }, { key: 3 }, { key: 4 }].map(item =>
@@ -295,7 +296,6 @@ export default class MenuPage extends Component {
             style={this.state.size}
             autoplay={true}
             bullets={true}
-            onAnimateNextPage={p => console.log(p)}
           >
             {this.setCarousel()}
           </Carousel>
@@ -314,3 +314,69 @@ export default class MenuPage extends Component {
     );
   }
 }
+
+class DetailPage extends Component {
+  static navigationOptions = {
+    tabBarIcon: ({ tintColor }) =>
+      <Image
+        source={require("../assets/Menu_Btn_nrm.png")}
+        style={[styles.icon, { tintColor: tintColor }]}
+      />
+  };
+
+  render() {
+    let { item } = this.props.navigation.state.params;
+
+    return (
+      <View style={{ flex: 1, alignItems: "stretch" }}>
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <Text
+            style={{
+              fontSize: 22,
+              fontWeight: "bold"
+            }}
+          >
+            {item.name}
+          </Text>
+        </View>
+        <Image
+          style={{ flex: 4, width: null, height: null }}
+          source={item.src}
+        />
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 22,
+              fontWeight: "bold"
+            }}
+          >
+            Address : {item.address}
+          </Text>
+        </View>
+        <View style={{ flex: 6 }} />
+      </View>
+    );
+  }
+}
+
+const MenuNavigator = StackNavigator({
+  MenuPage: {
+    screen: MenuPage,
+    navigationOptions: {
+      header: null
+    }
+  },
+  DetailPage: {
+    screen: DetailPage,
+    navigationOptions: {
+      title: "Details"
+    }
+  }
+});
+
+export default MenuNavigator;
